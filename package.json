@@ -1,0 +1,23 @@
+{
+  "name": "creatorforge",
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.0",
+    "@types/node": "^25.5.0",
+    "jsonc-parser": "^3.3.1",
+    "typescript": "^5.8.3"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "db:push": "supabase db push",
+    "db:reset": "supabase db reset",
+    "lint": "biome check .",
+    "lint:fix": "biome check . --write"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.10.0",
+    "@supabase/supabase-js": "^2.101.0",
+    "lucide-react": "^1.7.0"
+  }
+}

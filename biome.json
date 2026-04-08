@@ -1,0 +1,102 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "files": {
+    "includes": [
+      "**",
+      "!**/.next",
+      "!**/.turbo",
+      "!**/dist",
+      "!**/.venv/**",
+      "!bun.lock"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "lineWidth": 100,
+    "indentStyle": "space",
+    "indentWidth": 4
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        "noSvgWithoutTitle": "off",
+        "useGenericFontNames": "off",
+        "noStaticElementInteractions": "off",
+        "useKeyWithClickEvents": "info",
+        "useAriaPropsSupportedByRole": "info"
+      },
+      "complexity": {
+        "useArrowFunction": "off"
+      },
+      "suspicious": {
+        "noTemplateCurlyInString": "off"
+      },
+      "style": {
+        "noNonNullAssertion": "off",
+        "useBlockStatements": "off",
+        "useNodejsImportProtocol": "info",
+        "noParameterAssign": "error",
+        "useAsConstAssertion": "error",
+        "useDefaultParameterLast": "error",
+        "useEnumInitializers": "error",
+        "useSelfClosingElements": "error",
+        "useSingleVarDeclarator": "error",
+        "noUnusedTemplateLiteral": "error",
+        "useNumberNamespace": "error",
+        "noInferrableTypes": "error",
+        "noUselessElse": "error",
+        "noRestrictedImports": {
+          "level": "warn",
+          "options": {
+            "paths": {
+              "@mui/icons-material": "Default imports are preferred over named imports"
+            }
+          }
+        }
+      },
+      "correctness": {
+        "noUnusedImports": "error",
+        "noUnusedVariables": "error",
+        "useExhaustiveDependencies": "error"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "info"
+      },
+      "nursery": {
+        "useSortedClasses": {
+          "level": "error",
+          "options": {
+            "attributes": ["className"],
+            "functions": ["twMerge", "twJoin"]
+          }
+        }
+      }
+    },
+    "includes": [
+      "**",
+      "!**/.next",
+      "!**/.turbo",
+      "!**/tsconfig.*.json",
+      "!**/generated/**",
+      "!**/dist/**/*"
+    ]
+  },
+  "javascript": {
+    "formatter": {
+      "enabled": true,
+      "semicolons": "always",
+      "trailingComma": "es5",
+      "arrowParentheses": "always",
+      "quoteStyle": "double"
+    }
+  }
+}
